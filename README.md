@@ -12,6 +12,6 @@ If the PML is used for parrallel reaction monitoring (PRM) in an Q-exactive mass
 
 TBD
 
-## running the script
+## Running the script
 
 TBD
