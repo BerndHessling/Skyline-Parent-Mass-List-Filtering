@@ -8,7 +8,7 @@ Targeted MS-aquisition by using parent mass lists (PML) can boost your sensitivi
 A second option allows to specifically filter for modified peptides (rightnow phosphorylation and acetylation are supported). In addition charge state filtering will be applied based on empirical data (see above) and peptide bearing modified cleavage sites are discarted as well (e.g. acetylated lysine no longer serves as tryptic cleavage site).
 If the PML is used for parrallel reaction monitoring (PRM) in an Q-exactive mass spectrometer optimal MSX combinations can be introduced by retention times predicted by Skyline or more roughly by m/z values.
 
-## Prerequisits
+## Prerequisites
 
 TBD
 
