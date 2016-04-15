@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<SrmSettingsList>
+  <settings_summary name="Phospho">
+    <peptide_settings>
+      <enzyme name="Trypsin/P" cut="KR" no_cut="" sense="C" />
+      <digest_settings max_missed_cleavages="2" />
+      <peptide_prediction use_measured_rts="true" measured_rt_window="2" use_spectral_library_drift_times="false" />
+      <peptide_filter start="0" min_length="5" max_length="25" auto_select="true">
+        <peptide_exclusions />
+      </peptide_filter>
+      <peptide_libraries pick="library" />
+      <peptide_modifications max_variable_mods="3" max_neutral_losses="1">
+        <static_modifications>
+          <static_modification name="Carbamidomethyl (C)" aminoacid="C" formula="H3C2NO" unimod_id="4" short_name="CAM" />
+          <static_modification name="Phospho (ST)" aminoacid="S, T" variable="true" formula="HO3P" unimod_id="21" short_name="Pho">
+            <potential_loss formula="H3O4P" massdiff_monoisotopic="97.976896" massdiff_average="97.995181" />
+          </static_modification>
+          <static_modification name="Phospho (Y)" aminoacid="Y" variable="true" formula="HO3P" unimod_id="21" short_name="Pho" />
+          <static_modification name="Met-loss (Protein N-term M)" aminoacid="M" terminus="N" variable="true" formula="-H9C5NOS" unimod_id="765" />
+        </static_modifications>
+        <heavy_modifications />
+      </peptide_modifications>
+    </peptide_settings>
+    <transition_settings>
+      <transition_prediction precursor_mass_type="Monoisotopic" fragment_mass_type="Monoisotopic" optimize_by="None">
+        <predict_collision_energy name="Thermo TSQ Vantage" step_size="1" step_count="5">
+          <regression_ce charge="2" slope="0.03" intercept="2.905" />
+          <regression_ce charge="3" slope="0.038" intercept="2.281" />
+        </predict_collision_energy>
+      </transition_prediction>
+      <transition_filter precursor_charges="2,3,4,5" product_charges="1" fragment_types="p" fragment_range_first="m/z &gt; precursor" fragment_range_last="3 ions" precursor_mz_window="0" auto_select="true" />
+      <transition_libraries ion_match_tolerance="0.5" ion_count="3" pick_from="all" />
+      <transition_integration integrate_all="true" />
+      <transition_instrument min_mz="400" max_mz="2000" mz_match_tolerance="0.055" />
+      <transition_full_scan precursor_isotopes="Count" precursor_isotope_filter="3" precursor_mass_analyzer="orbitrap" precursor_res="240000" precursor_res_mz="400" retention_time_filter_type="ms2_ids" retention_time_filter_length="5">
+        <isotope_enrichments name="Default">
+          <atom_percent_enrichment symbol="H'">0.98</atom_percent_enrichment>
+          <atom_percent_enrichment symbol="C'">0.995</atom_percent_enrichment>
+          <atom_percent_enrichment symbol="N'">0.995</atom_percent_enrichment>
+          <atom_percent_enrichment symbol="O&quot;">0.99</atom_percent_enrichment>
+          <atom_percent_enrichment symbol="O'">0.99</atom_percent_enrichment>
+        </isotope_enrichments>
+      </transition_full_scan>
+    </transition_settings>
+    <data_settings />
+  </settings_summary>
+</SrmSettingsList>
