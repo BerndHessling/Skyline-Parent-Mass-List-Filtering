@@ -19,19 +19,23 @@ If the PML is used for parrallel reaction monitoring (PRM) in an Q-exactive mass
 When starting the script three different input fields will pop-up:
  1. "Input file": Browse to your Skyline exported csv file (see [pdf](Creating-parent-mass-lists-with-skyline.pdf) for more details)
 
- 2. "Which peptides to keep:": choose the filter applied to your peptide list:
+ 2. "Which peptides to keep:": Choose the filter applied to your peptide list:
    - "all"         : don't discard peptides
-   -  "STY-phospho" : keep only peptides with phosphorylation on S,T, or Y
-   - "K-acetyl"    : keep only peptides with acetylation on K
+   - "STY-phospho" : keep only peptides with phosphorylation on S,T, or Y
+   - "K-acetyl"    : keep only peptides with acetylation on K, but no acetylation on c-terminal K
 
- 3. "Choose Charge state filter:" How restrictive should be filtered for charge states:
-   - "optimal" : only charge states are allowed that are likely to be detected according to the number of basic amino acids and phosphorylations (empiric by dataset 15-137)
+ 3. "Choose Charge state filter:" How restrictively should be filtered for charge states:
+   - "optimal" : only charge states are allowed that are likely to be detected according to the number of basic amino acids and phosphorylations (empiricly derived by analysing large dataset of about 15k peptides)
    - "oneMax"  : only the one most likely charge State is accepted
    - "noFilter": all charge states are accepted
 
 4. "Choose MSX count:" Should optimal MSX IDs be included (only for PRM analysis):
    - "0": disabled
    - "1-10": number of MSX groups in your experiments
+
+MSX IDs are selected by having optimal spread of peptides for each MSX group according to either retention time (if present in the input file) or m/z values.
+
+## Output
 
 The resulting csv file will be filterd with chosen settings and stored at the same place the original file was located. It can directly be imported into QExactive instruments from thermo, or m/z lists must be copied manually into the MS-software.
 
