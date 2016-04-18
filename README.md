@@ -10,10 +10,28 @@ If the PML is used for parrallel reaction monitoring (PRM) in an Q-exactive mass
 
 ## Prerequisites
 
- - csv file exported from skyline or formatted in the same way
- - 
+ - Skyline is recommended to generate raw PML
+ - [R](https://cran.r-project.org/bin/windows/base/) needs to be installed (package was developed for version 3.2.4).
+ - csv file exported from skyline or formatted in the same way (see [pdf](Creating-parent-mass-lists-with-skyline.pdf) for more details)
 
 ## Running the script
 
 When starting the script three different input fields will pop-up:
-  1. Input file: Browse to your Skyline exported csv file (see [pdf](Creating-parent-mass-lists-with-skyline.pdf) for more details)
+ 1. "Input file": Browse to your Skyline exported csv file (see [pdf](Creating-parent-mass-lists-with-skyline.pdf) for more details)
+
+ 2. "Which peptides to keep:": choose the filter applied to your peptide list:
+   - "all"         : don't discard peptides
+   -  "STY-phospho" : keep only peptides with phosphorylation on S,T, or Y
+   - "K-acetyl"    : keep only peptides with acetylation on K
+
+ 3. "Choose Charge state filter:" How restrictive should be filtered for charge states:
+   - "optimal" : only charge states are allowed that are likely to be detected according to the number of basic amino acids and phosphorylations (empiric by dataset 15-137)
+   - "oneMax"  : only the one most likely charge State is accepted
+   - "noFilter": all charge states are accepted
+
+4. "Choose MSX count:" Should optimal MSX IDs be included (only for PRM analysis):
+   - "0": disabled
+   - "1-10": number of MSX groups in your experiments
+
+The resulting csv file will be filterd with chosen settings and stored at the same place the original file was located. It can directly be imported into QExactive instruments from thermo, or m/z lists must be copied manually into the MS-software.
+
