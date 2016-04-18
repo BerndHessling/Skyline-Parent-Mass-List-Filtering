@@ -10,8 +10,10 @@ If the PML is used for parrallel reaction monitoring (PRM) in an Q-exactive mass
 
 ## Prerequisites
 
-TBD
+ - csv file exported from skyline or formatted in the same way
+ - 
 
 ## Running the script
 
-TBD
+When starting the script three different input fields will pop-up:
+  1. Input file: Browse to your Skyline exported csv file (see pdf for more details)[/Creating-parent-mass-lists-with-skyline.pdf]
