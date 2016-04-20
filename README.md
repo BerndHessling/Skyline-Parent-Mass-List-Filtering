@@ -29,7 +29,7 @@ When starting the script three different input fields will pop-up:
    - "oneMax"  : only the one most likely charge State is accepted
    - "noFilter": all charge states are accepted
 
-4. "Choose MSX count:" Should optimal MSX IDs be included (only for PRM analysis):
+ 4. "Choose MSX count:" Should optimal MSX IDs be included (only for PRM analysis):
    - "0": disabled
    - "1-10": number of MSX groups in your experiments
 
