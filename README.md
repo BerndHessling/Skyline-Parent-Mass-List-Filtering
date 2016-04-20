@@ -1,11 +1,11 @@
 # Skyline-Parent-Mass-List-Filtering
-This R-script filters parent mass lists created by Skyline. It can be used to discard charge states, unlikely to detect depend on peptide sequence and/or can discard unmodified peptides when looking for certain modifications
+This R-script filters parent mass lists created by Skyline. It can be used to discard charge states, unlikely to detect, depending on peptide sequence and/or can discard unmodified peptides when looking for certain modifications.
 
 
 ## Introduction
 
 Targeted MS-aquisition by using parent mass lists (PML) can boost your sensitivity tremendously. With The Skyline software it's easy to create these PML for your protein(s) of interest. A possible drawback of the method is length of these lists as they can extend the speed capabilities of your LC-MS setup. This tool reduces the PML size dramatically by discarting peptide charge states, unlikely to be detected according to peptide sequences. Large repositries of unmodified as well as phosphorylated peptides have been scanned for most sequence dependend charge states and the results serve as input for the filtering process. This filtering can be applied to cover > 95 % of all peptide charge states, which already greatly reduces complexity of the PML, or to filter for just the most likely charge state per peptide.
-A second option allows to specifically filter for modified peptides (right now phosphorylation and acetylation are supported). Additionally charge state filtering will be applied based on empiric data (see above) and peptides bearing modified cleavage sites are discarted as well (e.g. acetylated lysine no longer serves as tryptic cleavage site).
+A second option allows to specifically filter for modified peptides (right now STY-phosphorylation and K-acetylation are supported). Additionally charge state filtering will be applied based on empiric data (see above) and peptides bearing modified cleavage sites are discarted as well (e.g. acetylated lysine no longer serves as tryptic cleavage site).
 If the PML is used for parrallel reaction monitoring (PRM) in an Q-exactive mass spectrometer optimal MSX combinations can be introduced by retention times predicted by Skyline or more roughly by m/z values.
 
 ## Prerequisites
@@ -16,7 +16,7 @@ If the PML is used for parrallel reaction monitoring (PRM) in an Q-exactive mass
 
 ## Running the script
 
-When starting the script three different input fields will pop-up:
+When starting the script three successive input fields will pop-up:
  1. "Input file": Browse to your Skyline exported csv file (see [pdf](Creating-parent-mass-lists-with-skyline.pdf) for more details)
 
  2. "Which peptides to keep:": Choose the filter applied to your peptide list:
