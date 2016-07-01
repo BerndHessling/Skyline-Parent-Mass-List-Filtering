@@ -1,6 +1,5 @@
 # Skyline-Parent-Mass-List-Filtering
-Filter parent mass lists created by Skyline and charge states, unlikely to detect, depending on peptide sequence and/or discard unmodified peptides when looking for certain modifications.
-
+Reduce complexity of parent mass lists by e.g. filtering out unlikely peptide charge states.
 
 ## Introduction
 
